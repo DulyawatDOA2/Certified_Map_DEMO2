@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>แผนที่ร้านค้าและแปลงที่ผ่านการรับรองมาตรฐาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg class="seal" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="var(--brand)"/><path d="M20 8c-5 0-9 4-9 9 0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9z" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M15.5 17.5l3.2 3.2 5.8-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><h1 id="ttl">แผนที่ร้านค้าและแปลงที่ผ่านการรับรองมาตรฐาน</h1><p class="sub" id="sub"></p></div>
+    </div>
+  </header>
+  <div class="banner" id="notice" hidden></div>
+
+  <main class="main">
+    <aside class="panel" id="panel">
+      <div class="controls">
+        <div class="row">
+          <button class="btn primary" id="btnLocate" type="button">ใช้ตำแหน่งของฉัน</button>
+          <button class="btn" id="btnPick" type="button" aria-pressed="false">ปักตำแหน่งเอง</button>
+        </div>
+        <input class="field" id="q" type="search" placeholder="ค้นหาชื่อ ที่อยู่ หรือเลขที่ใบรับรอง" aria-label="ค้นหา">
+        <div class="two">
+          <select class="field" id="selProv" aria-label="จังหวัด"><option value="">ทุกจังหวัด</option></select>
+          <select class="field" id="selDist" aria-label="อำเภอ" disabled><option value="">ทุกอำเภอ</option></select>
+        </div>
+        <div class="two">
+          <select class="field" id="selType" aria-label="ประเภท"><option value="">ทุกประเภท</option></select>
+          <select class="field" id="radius" aria-label="ระยะค้นหา">
+            <option value="0">ทุกระยะ</option><option value="5">ภายใน 5 กม.</option><option value="10">ภายใน 10 กม.</option><option value="25">ภายใน 25 กม.</option><option value="50">ภายใน 50 กม.</option><option value="100">ภายใน 100 กม.</option>
+          </select>
+        </div>
+        <fieldset class="layers">
+          <legend>ข้อมูลที่แสดงบนแผนที่</legend>
+          <div id="layerList"></div>
+          <div id="bndList" class="bnd">
+            <label><input type="checkbox" id="chkProv"> เส้นขอบจังหวัด</label>
+            <label><input type="checkbox" id="chkDist"> เส้นขอบอำเภอ</label>
+          </div>
+          <p class="note" id="bndNote" hidden></p>
+        </fieldset>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+      <div class="nearest" id="nearest" hidden></div>
+      <div class="count" id="count"></div>
+      <ul class="list" id="list"></ul>
+      <div class="foot">
+        <span id="stamp">กำลังโหลดข้อมูล…</span>
+        <button class="btn small" id="btnRefresh" type="button">รีเฟรช</button>
+      </div>
+      <details class="check" id="check" hidden><summary>รายงานตรวจข้อมูล (สำหรับเจ้าหน้าที่)</summary><div id="checkBody"></div></details>
+    </aside>
+
+    <section class="mapwrap">
+      <div id="map" aria-label="แผนที่แสดงตำแหน่ง"></div>
+      <div class="hint" id="hint" hidden></div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

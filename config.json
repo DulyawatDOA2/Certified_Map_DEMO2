@@ -1,0 +1,50 @@
+{
+  "title": "แผนที่ร้านค้าและแปลงที่ผ่านการรับรองมาตรฐาน",
+  "org": "สำนักงานวิจัยและพัฒนาการเกษตร เขตที่ 2",
+  "notice": "ข้อมูลในหน้านี้เป็นข้อมูลตัวอย่างสมมติ ไม่ใช่ร้านหรือแปลงจริง",
+
+  "mapCenter": [13.0, 101.0],
+  "mapZoom": 6,
+  "maxBounds": [[3.5, 95.5], [22.5, 107.5]],
+
+  "refreshMinutes": 5,
+
+  "configSheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNpoewOnaTm_7vqhBvHUzjwSOntlTk5ZtahiGYv8J7ajr7u0AEgwsXz1qXwjRcKNJIzNZ5ntStdNvh/pub?gid=1155594798&single=true&output=csv",
+  "localLayers": [],
+
+  "boundaries": {
+    "province": "data/boundaries/provinces.geojson",
+    "district": "data/boundaries/districts.geojson",
+    "provinceNameProp": "ADM1_TH",
+    "districtNameProp": "ADM2_TH",
+    "districtProvinceProp": "ADM1_TH",
+    "provinceDefaultOn": true,
+    "districtDefaultOn": false,
+    "autoAssign": true
+  },
+
+  "basemaps": [
+    {
+      "id": "osm",
+      "name": "OpenStreetMap",
+      "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "attribution": "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+      "maxZoom": 19,
+      "default": true
+    },
+    {
+      "id": "topo",
+      "name": "OpenTopoMap (ภูมิประเทศ)",
+      "url": "https://tile.opentopomap.org/{z}/{x}/{y}.png",
+      "attribution": "Map data: &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href=\"https://opentopomap.org\">OpenTopoMap</a> (CC-BY-SA)",
+      "maxZoom": 17
+    },
+    {
+      "id": "imagery",
+      "name": "ภาพถ่ายดาวเทียม (Esri)",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "attribution": "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      "maxZoom": 18
+    }
+  ]
+}

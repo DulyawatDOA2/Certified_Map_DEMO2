@@ -1,0 +1,5 @@
+[
+  { "url": "", "out": "data/synced/_config.csv" },
+  { "url": "", "out": "data/synced/shops.csv" },
+  { "url": "", "out": "data/synced/plots.csv" }
+]

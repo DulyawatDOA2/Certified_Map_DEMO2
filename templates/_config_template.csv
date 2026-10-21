@@ -1,0 +1,3 @@
+﻿layer_id,title,csv_url,color,icon,visible,default_on,order,description
+shops,ร้านค้าที่ผ่านการรับรองมาตรฐาน,(วางลิงก์ CSV ของแท็บร้านค้า),#0a6b52,🏪,TRUE,TRUE,1,
+plots,แปลงที่ผ่านการรับรองมาตรฐาน,(วางลิงก์ CSV ของแท็บแปลง),#b45f06,🌾,TRUE,TRUE,2,
